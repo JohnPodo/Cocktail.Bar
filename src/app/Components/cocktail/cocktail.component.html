@@ -1,0 +1,129 @@
+<div *ngIf="cocktailArray && cocktailArray.drinks.length">
+  <div class="container">
+    <h1 class="title">{{ cocktailArray.drinks[0].strDrink }}</h1>
+    <div class="image-container">
+      <img [src]="cocktailArray.drinks[0].strDrinkThumb" />
+    </div>
+    <div class="info">
+      <div class="general-info">
+        <div class="general-info-label">
+          <p class="info-label">Category :</p>
+          <p class="category">{{ cocktailArray.drinks[0].strCategory }}</p>
+        </div>
+        <div class="general-info-label">
+          <p class="info-label">Served in :</p>
+          <p class="glass">{{ cocktailArray.drinks[0].strGlass }}</p>
+        </div>
+      </div>
+      <div class="description">
+        <h2 class="description-label">Description</h2>
+        <p class="description-text">
+          {{ cocktailArray.drinks[0].strInstructions }}
+        </p>
+      </div>
+    </div>
+    <fieldset>
+      <legend>Ingredients:</legend>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient1 &&
+          cocktailArray.drinks[0].strMeasure1
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient1 }} :
+        {{ cocktailArray.drinks[0].strMeasure1 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient2 &&
+          cocktailArray.drinks[0].strMeasure2
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient2 }} :
+        {{ cocktailArray.drinks[0].strMeasure2 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient3 &&
+          cocktailArray.drinks[0].strMeasure3
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient3 }} :
+        {{ cocktailArray.drinks[0].strMeasure3 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient4 &&
+          cocktailArray.drinks[0].strMeasure4
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient4 }} :
+        {{ cocktailArray.drinks[0].strMeasure4 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient5 &&
+          cocktailArray.drinks[0].strMeasure5
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient5 }} :
+        {{ cocktailArray.drinks[0].strMeasure5 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient6 &&
+          cocktailArray.drinks[0].strMeasure6
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient6 }} :
+        {{ cocktailArray.drinks[0].strMeasure6 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient7 &&
+          cocktailArray.drinks[0].strMeasure7
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient7 }} :
+        {{ cocktailArray.drinks[0].strMeasure7 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient8 &&
+          cocktailArray.drinks[0].strMeasure8
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient8 }} :
+        {{ cocktailArray.drinks[0].strMeasure8 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient9 &&
+          cocktailArray.drinks[0].strMeasure9
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient9 }} :
+        {{ cocktailArray.drinks[0].strMeasure9 }}
+      </div>
+      <div
+        class="ingredient"
+        *ngIf="
+          cocktailArray.drinks[0].strIngredient10 &&
+          cocktailArray.drinks[0].strMeasure10
+        "
+      >
+        {{ cocktailArray.drinks[0].strIngredient10 }} :
+        {{ cocktailArray.drinks[0].strMeasure10 }}
+      </div>
+    </fieldset>
+  </div>
+</div>
