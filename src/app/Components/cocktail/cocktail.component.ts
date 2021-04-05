@@ -16,6 +16,7 @@ export class CocktailComponent implements OnInit {
       .GetRandomCockTail()
       .subscribe((data) => (this.cocktailArray = data));
   }
+
   ngOnInit(): void {
     this.GetRandomCockTail();
   }
