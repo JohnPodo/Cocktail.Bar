@@ -11,13 +11,30 @@ export class CocktailComponent implements OnInit {
   constructor(private service: CockTailService) {}
 
   cocktailArray!: Bar;
-  GetRandomCockTail() {
-    this.service
-      .GetRandomCockTail()
-      .subscribe((data) => (this.cocktailArray = data));
-  }
+  listOfCocktails: Cocktail[] = [];
+  descriptionText: string = 'Our Four Random Suggestions';
+  searchText!: string;
 
   ngOnInit(): void {
-    this.GetRandomCockTail();
+    this.GetFourRandomCocktails();
   }
+
+  //Populate Landing Page With Four Random Cocktails
+  GetRandomCockTail() {
+    this.service.GetRandomCockTail().subscribe((data) => {
+      this.cocktailArray = data;
+      this.AddCocktailToList(this.cocktailArray.drinks[0]);
+    });
+  }
+
+  AddCocktailToList(x: Cocktail) {
+    this.listOfCocktails.push(x);
+  }
+
+  GetFourRandomCocktails() {
+    for (let i = 0; i < 4; i++) {
+      this.GetRandomCockTail();
+    }
+  }
+  //
 }

@@ -10,7 +10,7 @@ export class CockTailService {
   private url: string =
     'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
-  GetRandomCockTail(): Observable<Bar> {
+   GetRandomCockTail(): Observable<Bar> {
     let randomCockTail = this.url;
     return this.http.get<Bar>(randomCockTail);
   }

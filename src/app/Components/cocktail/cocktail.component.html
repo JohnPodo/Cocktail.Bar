@@ -1,495 +1,76 @@
-<div *ngIf="cocktailArray && cocktailArray.drinks.length" class="container">
+<div *ngIf="listOfCocktails && listOfCocktails.length" class="container">
   <h1 class="welcome">Welcome to Cocktail Bar</h1>
   <div class="suggestions-search">
-    <p class="suggestions-text">Our Four Random Suggestions</p>
-    <input type="text" class="input" placeholder="Search..." />
+    <p class="suggestions-text">{{ descriptionText }}</p>
+    <input
+      type="text"
+      class="input"
+      placeholder="Search..."
+      [(ngModel)]="searchText"
+    />
   </div>
   <div class="cocktail-container">
-    <div class="cocktail">
-      <h1 class="title">{{ cocktailArray.drinks[0].strDrink }}</h1>
-      <img [src]="cocktailArray.drinks[0].strDrinkThumb" />
+    <div class="cocktail" *ngFor="let item of listOfCocktails">
+      <h1 class="title">{{ item.strDrink }}</h1>
+      <img [src]="item.strDrinkThumb" />
       <div class="general-info">
         <div class="general-info-label">
           <p class="info-label">Category:</p>
-          <p class="category">{{ cocktailArray.drinks[0].strCategory }}</p>
+          <p class="category">{{ item.strCategory }}</p>
         </div>
         <div class="general-info-label">
           <p class="info-label">Served in:</p>
-          <p class="glass">{{ cocktailArray.drinks[0].strGlass }}</p>
+          <p class="glass">{{ item.strGlass }}</p>
         </div>
         <div class="description">
           <p class="description-text">
-            {{ cocktailArray.drinks[0].strInstructions }}
+            {{ item.strInstructions }}
           </p>
         </div>
       </div>
       <fieldset class="ingredients">
         <legend>Ingredients:</legend>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient1 &&
-            cocktailArray.drinks[0].strMeasure1
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient1 }} :
-          {{ cocktailArray.drinks[0].strMeasure1 }}
+        <div class="ingredient" *ngIf="item.strIngredient1 && item.strMeasure1">
+          {{ item.strIngredient1 }} :
+          {{ item.strMeasure1 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient2 && item.strMeasure2">
+          {{ item.strIngredient2 }} :
+          {{ item.strMeasure2 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient3 && item.strMeasure3">
+          {{ item.strIngredient3 }} :
+          {{ item.strMeasure3 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient4 && item.strMeasure4">
+          {{ item.strIngredient4 }} :
+          {{ item.strMeasure4 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient5 && item.strMeasure5">
+          {{ item.strIngredient5 }} :
+          {{ item.strMeasure5 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient6 && item.strMeasure6">
+          {{ item.strIngredient6 }} :
+          {{ item.strMeasure6 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient7 && item.strMeasure7">
+          item.strIngredient7 }} : item.strMeasure7 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient8 && item.strMeasure8">
+          {{ item.strIngredient8 }} :
+          {{ item.strMeasure8 }}
+        </div>
+        <div class="ingredient" *ngIf="item.strIngredient9 && item.strMeasure9">
+          {{ item.strIngredient9 }} :
+          {{ item.strMeasure9 }}
         </div>
         <div
           class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient2 &&
-            cocktailArray.drinks[0].strMeasure2
-          "
+          *ngIf="item.strIngredient10 && item.strMeasure10"
         >
-          {{ cocktailArray.drinks[0].strIngredient2 }} :
-          {{ cocktailArray.drinks[0].strMeasure2 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient3 &&
-            cocktailArray.drinks[0].strMeasure3
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient3 }} :
-          {{ cocktailArray.drinks[0].strMeasure3 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient4 &&
-            cocktailArray.drinks[0].strMeasure4
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient4 }} :
-          {{ cocktailArray.drinks[0].strMeasure4 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient5 &&
-            cocktailArray.drinks[0].strMeasure5
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient5 }} :
-          {{ cocktailArray.drinks[0].strMeasure5 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient6 &&
-            cocktailArray.drinks[0].strMeasure6
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient6 }} :
-          {{ cocktailArray.drinks[0].strMeasure6 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient7 &&
-            cocktailArray.drinks[0].strMeasure7
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient7 }} :
-          {{ cocktailArray.drinks[0].strMeasure7 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient8 &&
-            cocktailArray.drinks[0].strMeasure8
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient8 }} :
-          {{ cocktailArray.drinks[0].strMeasure8 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient9 &&
-            cocktailArray.drinks[0].strMeasure9
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient9 }} :
-          {{ cocktailArray.drinks[0].strMeasure9 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient10 &&
-            cocktailArray.drinks[0].strMeasure10
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient10 }} :
-          {{ cocktailArray.drinks[0].strMeasure10 }}
-        </div>
-      </fieldset>
-    </div>
-    <div class="cocktail">
-      <h1 class="title">{{ cocktailArray.drinks[0].strDrink }}</h1>
-      <img [src]="cocktailArray.drinks[0].strDrinkThumb" />
-      <div class="general-info">
-        <div class="general-info-label">
-          <p class="info-label">Category:</p>
-          <p class="category">{{ cocktailArray.drinks[0].strCategory }}</p>
-        </div>
-        <div class="general-info-label">
-          <p class="info-label">Served in:</p>
-          <p class="glass">{{ cocktailArray.drinks[0].strGlass }}</p>
-        </div>
-        <div class="description">
-          <p class="description-text">
-            {{ cocktailArray.drinks[0].strInstructions }}
-          </p>
-        </div>
-      </div>
-      <fieldset class="ingredients">
-        <legend>Ingredients:</legend>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient1 &&
-            cocktailArray.drinks[0].strMeasure1
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient1 }} :
-          {{ cocktailArray.drinks[0].strMeasure1 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient2 &&
-            cocktailArray.drinks[0].strMeasure2
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient2 }} :
-          {{ cocktailArray.drinks[0].strMeasure2 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient3 &&
-            cocktailArray.drinks[0].strMeasure3
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient3 }} :
-          {{ cocktailArray.drinks[0].strMeasure3 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient4 &&
-            cocktailArray.drinks[0].strMeasure4
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient4 }} :
-          {{ cocktailArray.drinks[0].strMeasure4 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient5 &&
-            cocktailArray.drinks[0].strMeasure5
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient5 }} :
-          {{ cocktailArray.drinks[0].strMeasure5 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient6 &&
-            cocktailArray.drinks[0].strMeasure6
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient6 }} :
-          {{ cocktailArray.drinks[0].strMeasure6 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient7 &&
-            cocktailArray.drinks[0].strMeasure7
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient7 }} :
-          {{ cocktailArray.drinks[0].strMeasure7 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient8 &&
-            cocktailArray.drinks[0].strMeasure8
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient8 }} :
-          {{ cocktailArray.drinks[0].strMeasure8 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient9 &&
-            cocktailArray.drinks[0].strMeasure9
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient9 }} :
-          {{ cocktailArray.drinks[0].strMeasure9 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient10 &&
-            cocktailArray.drinks[0].strMeasure10
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient10 }} :
-          {{ cocktailArray.drinks[0].strMeasure10 }}
-        </div>
-      </fieldset>
-    </div>
-    <div class="cocktail">
-      <h1 class="title">{{ cocktailArray.drinks[0].strDrink }}</h1>
-      <img [src]="cocktailArray.drinks[0].strDrinkThumb" />
-      <div class="general-info">
-        <div class="general-info-label">
-          <p class="info-label">Category:</p>
-          <p class="category">{{ cocktailArray.drinks[0].strCategory }}</p>
-        </div>
-        <div class="general-info-label">
-          <p class="info-label">Served in:</p>
-          <p class="glass">{{ cocktailArray.drinks[0].strGlass }}</p>
-        </div>
-        <div class="description">
-          <p class="description-text">
-            {{ cocktailArray.drinks[0].strInstructions }}
-          </p>
-        </div>
-      </div>
-      <fieldset class="ingredients">
-        <legend>Ingredients:</legend>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient1 &&
-            cocktailArray.drinks[0].strMeasure1
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient1 }} :
-          {{ cocktailArray.drinks[0].strMeasure1 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient2 &&
-            cocktailArray.drinks[0].strMeasure2
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient2 }} :
-          {{ cocktailArray.drinks[0].strMeasure2 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient3 &&
-            cocktailArray.drinks[0].strMeasure3
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient3 }} :
-          {{ cocktailArray.drinks[0].strMeasure3 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient4 &&
-            cocktailArray.drinks[0].strMeasure4
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient4 }} :
-          {{ cocktailArray.drinks[0].strMeasure4 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient5 &&
-            cocktailArray.drinks[0].strMeasure5
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient5 }} :
-          {{ cocktailArray.drinks[0].strMeasure5 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient6 &&
-            cocktailArray.drinks[0].strMeasure6
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient6 }} :
-          {{ cocktailArray.drinks[0].strMeasure6 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient7 &&
-            cocktailArray.drinks[0].strMeasure7
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient7 }} :
-          {{ cocktailArray.drinks[0].strMeasure7 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient8 &&
-            cocktailArray.drinks[0].strMeasure8
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient8 }} :
-          {{ cocktailArray.drinks[0].strMeasure8 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient9 &&
-            cocktailArray.drinks[0].strMeasure9
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient9 }} :
-          {{ cocktailArray.drinks[0].strMeasure9 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient10 &&
-            cocktailArray.drinks[0].strMeasure10
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient10 }} :
-          {{ cocktailArray.drinks[0].strMeasure10 }}
-        </div>
-      </fieldset>
-    </div>
-    <div class="cocktail">
-      <h1 class="title">{{ cocktailArray.drinks[0].strDrink }}</h1>
-      <img [src]="cocktailArray.drinks[0].strDrinkThumb" />
-      <div class="general-info">
-        <div class="general-info-label">
-          <p class="info-label">Category:</p>
-          <p class="category">{{ cocktailArray.drinks[0].strCategory }}</p>
-        </div>
-        <div class="general-info-label">
-          <p class="info-label">Served in:</p>
-          <p class="glass">{{ cocktailArray.drinks[0].strGlass }}</p>
-        </div>
-        <div class="description">
-          <p class="description-text">
-            {{ cocktailArray.drinks[0].strInstructions }}
-          </p>
-        </div>
-      </div>
-      <fieldset class="ingredients">
-        <legend>Ingredients:</legend>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient1 &&
-            cocktailArray.drinks[0].strMeasure1
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient1 }} :
-          {{ cocktailArray.drinks[0].strMeasure1 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient2 &&
-            cocktailArray.drinks[0].strMeasure2
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient2 }} :
-          {{ cocktailArray.drinks[0].strMeasure2 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient3 &&
-            cocktailArray.drinks[0].strMeasure3
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient3 }} :
-          {{ cocktailArray.drinks[0].strMeasure3 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient4 &&
-            cocktailArray.drinks[0].strMeasure4
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient4 }} :
-          {{ cocktailArray.drinks[0].strMeasure4 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient5 &&
-            cocktailArray.drinks[0].strMeasure5
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient5 }} :
-          {{ cocktailArray.drinks[0].strMeasure5 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient6 &&
-            cocktailArray.drinks[0].strMeasure6
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient6 }} :
-          {{ cocktailArray.drinks[0].strMeasure6 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient7 &&
-            cocktailArray.drinks[0].strMeasure7
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient7 }} :
-          {{ cocktailArray.drinks[0].strMeasure7 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient8 &&
-            cocktailArray.drinks[0].strMeasure8
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient8 }} :
-          {{ cocktailArray.drinks[0].strMeasure8 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient9 &&
-            cocktailArray.drinks[0].strMeasure9
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient9 }} :
-          {{ cocktailArray.drinks[0].strMeasure9 }}
-        </div>
-        <div
-          class="ingredient"
-          *ngIf="
-            cocktailArray.drinks[0].strIngredient10 &&
-            cocktailArray.drinks[0].strMeasure10
-          "
-        >
-          {{ cocktailArray.drinks[0].strIngredient10 }} :
-          {{ cocktailArray.drinks[0].strMeasure10 }}
+          {{ item.strIngredient10 }} :
+          {{ item.strMeasure10 }}
         </div>
       </fieldset>
     </div>
