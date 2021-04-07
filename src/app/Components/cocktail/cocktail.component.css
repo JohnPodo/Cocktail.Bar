@@ -1,42 +1,168 @@
 .container {
-  width: 40%;
-  height: 40%;
+  width: 90%;
+  height: 100%;
   display: flex;
   margin: auto auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 40px;
+  padding: 10px 20px;
   background-color: #485461;
   background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+  position: relative;
 }
 
-.container .title {
-  font-size: 42px;
-  color: #fff;
-  border-bottom: grey 2px solid;
+.container .welcome {
+  border-bottom: #819a8c 2px solid;
+  width: 100%;
   height: 10%;
-  width: 100%;
+  margin: auto auto;
   text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 50px;
+  color: #a2d8b9;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.container .image-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
-  height: 20%;
+.container .suggestions-search {
+  display: flex;
   width: 100%;
+  height: 5%;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 10px;
 }
-
-.container .image-info img {
-  width: 100%;
+.container .suggestions-search .suggestions-text {
+  text-align: center;
+  width: 75%;
+  word-wrap: break-word;
   height: 100%;
+  font-size: 24px;
+  font-style: italic;
+  color: #87b299;
+  font-family: "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-weight: 10px;
+  opacity: 45%;
+}
+
+.container .suggestions-search .input {
+  background-color: #cddbd3;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 80%;
+  width: 25%;
+  transition: width 0.3s ease;
+  color: #2a3b31;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: bolder;
+  font-style: italic;
+  border-radius: 5px;
+}
+
+.container .cocktail-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  height: 70vh;
+}
+
+.container .cocktail-container .cocktail {
+  height: 95%;
+  width: 23%;
+  object-fit: cover;
+  margin: 10px 5px;
+  border: solid 2px #819a8c;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.container .cocktail-container .cocktail .title {
+  font-size: 26px;
+  text-align: center;
+  height: 5%;
+}
+
+.container .cocktail-container .cocktail img {
+  width: 100%;
+  height: 25%;
+  border-radius: 5px;
   object-fit: fill;
 }
 
-.ingredients {
-  height: 15%;
+.container .cocktail-container .cocktail .general-info {
+  resize: none;
+  height: 40%;
   width: 100%;
-  margin: 15px;
-  padding: 10px;
+}
+
+.container .cocktail-container .cocktail .general-info .general-info-label {
+  display: flex;
+  margin: 5px;
+  padding: 1px 3px;
+  height: 10%;
+  width: 90%;
+}
+
+.container
+  .cocktail-container
+  .cocktail
+  .general-info
+  .general-info-label
+  .info-label {
+  width: 40%;
+  height: inherit;
+  font-size: 16px;
+  color: #fff;
+}
+
+.container
+  .cocktail-container
+  .cocktail
+  .general-info
+  .general-info-label
+  .glass,
+.category {
+  width: 60%;
+  height: 25%;
+  word-wrap: break-word;
+  font-size: 16px;
+  color: #fff;
+}
+
+.container .cocktail-container .cocktail .general-info .description {
+  word-wrap: break-word;
+  height: 50%;
+  width: 100%;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.container
+  .cocktail-container
+  .cocktail
+  .general-info
+  .description
+  .description-text {
+  font-size: 16px;
+  color: #fff;
+  margin: 5px;
+  padding: 5px;
+  overflow-y: auto;
+  border: 1px solid #819a8c;
+  height: 100%;
+  resize: none;
+}
+
+.container .cocktail-container .cocktail .ingredients {
+  height: 30%;
+  resize: none;
+  overflow-y: auto;
+  color: #fff;
+  margin: 5px;
 }
