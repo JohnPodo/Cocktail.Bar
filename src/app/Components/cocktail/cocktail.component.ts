@@ -14,9 +14,29 @@ export class CocktailComponent implements OnInit {
   listOfCocktails: Cocktail[] = [];
   descriptionText: string = 'Our Four Random Suggestions';
   searchText!: string;
+  autoCompleteNames: Array<string> = [];
+
+  searchThis() {
+    if (this.searchText) {
+      this.descriptionText = `Search Result For ${this.searchText}`;
+      this.service.GetCocktailsByName(this.searchText).subscribe((data) => {
+        this.cocktailArray = data;
+        if (this.cocktailArray && this.cocktailArray.drinks) {
+          this.PopulateHtmlWithSearchedCocktails();
+        }
+      });
+    } else {
+      this.descriptionText = 'Our Four Random Suggestions';
+      this.listOfCocktails = [];
+      this.GetFourRandomCocktails();
+    }
+  }
 
   ngOnInit(): void {
     this.GetFourRandomCocktails();
+    this.autoCompleteNames = this.service.FillAutoCompleteOptions(
+      this.autoCompleteNames
+    );
   }
 
   //Populate Landing Page With Four Random Cocktails
@@ -37,4 +57,15 @@ export class CocktailComponent implements OnInit {
     }
   }
   //
+
+  PopulateHtmlWithSearchedCocktails() {
+    var count = 0;
+    this.listOfCocktails = [];
+    this.cocktailArray.drinks.forEach((cocktail) => {
+      if (count < 4) {
+        this.AddCocktailToList(cocktail);
+        count++;
+      }
+    });
+  }
 }

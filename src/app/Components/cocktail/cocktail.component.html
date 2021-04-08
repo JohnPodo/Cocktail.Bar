@@ -5,9 +5,16 @@
     <input
       type="text"
       class="input"
+      list="auto"
       placeholder="Search..."
       [(ngModel)]="searchText"
+      (keyup.enter)="searchThis()"
     />
+    <datalist id="auto">
+      <option *ngFor="let item of autoCompleteNames" [value]="item">
+        {{ item }}
+      </option>
+    </datalist>
   </div>
   <div class="cocktail-container">
     <div class="cocktail" *ngFor="let item of listOfCocktails">
@@ -55,7 +62,7 @@
           {{ item.strMeasure6 }}
         </div>
         <div class="ingredient" *ngIf="item.strIngredient7 && item.strMeasure7">
-          item.strIngredient7 }} : item.strMeasure7 }}
+          {{ item.strIngredient7 }} : {{ item.strMeasure7 }}
         </div>
         <div class="ingredient" *ngIf="item.strIngredient8 && item.strMeasure8">
           {{ item.strIngredient8 }} :
