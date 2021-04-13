@@ -1,0 +1,59 @@
+<h1 class="title">{{ item.strDrink }}</h1>
+<img [src]="item.strDrinkThumb" />
+<div class="general-info">
+  <div class="general-info-label">
+    <p class="info-label">Category:</p>
+    <p class="category">{{ item.strCategory }}</p>
+  </div>
+  <div class="general-info-label">
+    <p class="info-label">Served in:</p>
+    <p class="glass">{{ item.strGlass }}</p>
+  </div>
+  <div class="description">
+    <p class="description-text">
+      {{ item.strInstructions }}
+    </p>
+  </div>
+</div>
+<fieldset class="ingredients">
+  <legend>Ingredients:</legend>
+  <div class="ingredient" *ngIf="item.strIngredient1 && item.strMeasure1">
+    {{ item.strIngredient1 }} :
+    {{ item.strMeasure1 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient2 && item.strMeasure2">
+    {{ item.strIngredient2 }} :
+    {{ item.strMeasure2 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient3 && item.strMeasure3">
+    {{ item.strIngredient3 }} :
+    {{ item.strMeasure3 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient4 && item.strMeasure4">
+    {{ item.strIngredient4 }} :
+    {{ item.strMeasure4 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient5 && item.strMeasure5">
+    {{ item.strIngredient5 }} :
+    {{ item.strMeasure5 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient6 && item.strMeasure6">
+    {{ item.strIngredient6 }} :
+    {{ item.strMeasure6 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient7 && item.strMeasure7">
+    {{ item.strIngredient7 }} : {{ item.strMeasure7 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient8 && item.strMeasure8">
+    {{ item.strIngredient8 }} :
+    {{ item.strMeasure8 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient9 && item.strMeasure9">
+    {{ item.strIngredient9 }} :
+    {{ item.strMeasure9 }}
+  </div>
+  <div class="ingredient" *ngIf="item.strIngredient10 && item.strMeasure10">
+    {{ item.strIngredient10 }} :
+    {{ item.strMeasure10 }}
+  </div>
+</fieldset>

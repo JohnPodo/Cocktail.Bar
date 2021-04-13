@@ -71,7 +71,7 @@
   height: 70vh;
 }
 
-.container .cocktail-container .cocktail {
+.cocktail {
   height: 95%;
   width: 23%;
   object-fit: cover;
@@ -81,96 +81,4 @@
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-}
-
-.container .cocktail-container .cocktail .title {
-  font-size: 22px;
-  text-align: center;
-  height: 5%;
-  color: #819a8c;
-  font-style: italic;
-}
-
-.container .cocktail-container .cocktail img {
-  width: 100%;
-  height: 25%;
-  border-radius: 5px;
-  object-fit: contain;
-}
-
-.container .cocktail-container .cocktail .general-info {
-  resize: none;
-  max-height: 40%;
-  min-height: 40%;
-  height: 40%;
-  width: 100%;
-}
-
-.container .cocktail-container .cocktail .general-info .general-info-label {
-  display: flex;
-  margin: 5px;
-  padding: 1px 3px;
-  height: 10%;
-  width: 90%;
-}
-
-.container
-  .cocktail-container
-  .cocktail
-  .general-info
-  .general-info-label
-  .info-label {
-  width: 40%;
-  height: inherit;
-  font-size: 16px;
-  color: #fff;
-}
-
-.container
-  .cocktail-container
-  .cocktail
-  .general-info
-  .general-info-label
-  .glass,
-.category {
-  width: 60%;
-  height: 25%;
-  word-wrap: break-word;
-  font-size: 16px;
-  color: #fff;
-}
-
-.container .cocktail-container .cocktail .general-info .description {
-  word-wrap: break-word;
-  height: 50%;
-  width: 100%;
-  padding: 0px;
-  margin-top: 25px;
-}
-
-.container
-  .cocktail-container
-  .cocktail
-  .general-info
-  .description
-  .description-text {
-  font-size: 16px;
-  color: #fff;
-  margin: 5px;
-  padding: 5px;
-  margin: 5px;
-  overflow-y: auto;
-  border: 1px solid #819a8c;
-  height: 100%;
-  resize: none;
-}
-
-.container .cocktail-container .cocktail .ingredients {
-  height: 20%;
-  max-height: 18%;
-  min-height: 18%;
-  resize: none;
-  overflow-y: auto;
-  color: #fff;
-  margin: 5px;
 }

@@ -1,0 +1,25 @@
+<div *ngIf="listOfCocktails && listOfCocktails.length" class="container">
+  <h1 class="welcome">Welcome to Cocktail Bar</h1>
+  <div class="suggestions-search">
+    <p class="suggestions-text">{{ descriptionText }}</p>
+    <input
+      type="text"
+      class="input"
+      list="auto"
+      placeholder="Search..."
+      [(ngModel)]="searchText"
+      (keyup.enter)="searchThis()"
+    />
+    <datalist id="auto">
+      <option *ngFor="let item of autoCompleteNames" [value]="item">
+        {{ item }}
+      </option>
+    </datalist>
+  </div>
+  <div class="cocktail-container">
+    <app-cocktail-view class="cocktail"
+      *ngFor="let cocks of listOfCocktails"
+      [item]="cocks"
+    ></app-cocktail-view>
+  </div>
+</div>
