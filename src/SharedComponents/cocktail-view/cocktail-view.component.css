@@ -1,6 +1,7 @@
 .title {
   font-size: 22px;
   text-align: center;
+  align-items: stretch;
   height: 5%;
   color: #819a8c;
   font-style: italic;
