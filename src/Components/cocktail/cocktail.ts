@@ -106,3 +106,20 @@ export class Bar {
   drinks!: Cocktail[];
 }
 
+interface IIngredient {
+  idIngredient: string;
+  strIngredient: string;
+  strDescription: string;
+  strType: string;
+  strAlcohol: string;
+  strABV: string;
+}
+
+export class Ingredient implements IIngredient {
+  idIngredient!: string;
+  strIngredient!: string;
+  strDescription!: string;
+  strType!: string;
+  strAlcohol!: string;
+  strABV!: string;
+}

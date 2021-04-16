@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Cocktail, Bar } from './cocktail';
+import { Cocktail, Bar, Ingredient } from './cocktail';
 
 @Injectable({
   providedIn: 'root',
@@ -9,8 +9,12 @@ import { Cocktail, Bar } from './cocktail';
 export class CockTailService {
   private url: string =
     'https://www.thecocktaildb.com/api/json/v1/1/random.php';
-  private searchString: String =
+
+  private searchString: string =
     'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+
+  private searchIngredient: string =
+    'https://www.thecocktaildb.com/api/json/v1/1/search.php?i=';
 
   GetRandomCockTail(): Observable<Bar> {
     let randomCockTail = this.url;
@@ -52,5 +56,11 @@ export class CockTailService {
     return list;
   }
 
+  GetIngredients(ingredient: string) {
+    var str = ingredient.toLowerCase();
+    str = str.split(' ').join('_');
+    var url = this.searchIngredient + str;
+    return this.http.get<Ingredient>(url);
+  }
   constructor(private http: HttpClient) {}
 }

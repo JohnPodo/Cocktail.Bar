@@ -30,20 +30,14 @@ img {
   width: 90%;
 }
 
-
-  .general-info
-  .general-info-label
-  .info-label {
+.general-info .general-info-label .info-label {
   width: 40%;
   height: inherit;
   font-size: 16px;
   color: #fff;
 }
 
-
-  .general-info
-  .general-info-label
-  .glass,
+.general-info .general-info-label .glass,
 .category {
   width: 60%;
   height: 25%;
@@ -60,10 +54,7 @@ img {
   margin-top: 25px;
 }
 
-
-  .general-info
-  .description
-  .description-text {
+.general-info .description .description-text {
   font-size: 16px;
   color: #fff;
   margin: 5px;
@@ -84,3 +75,4 @@ img {
   color: #fff;
   margin: 5px;
 }
+

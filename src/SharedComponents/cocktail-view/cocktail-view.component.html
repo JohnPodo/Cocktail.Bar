@@ -18,44 +18,43 @@
 <fieldset class="ingredients">
   <legend>Ingredients:</legend>
   <div class="ingredient" *ngIf="item.strIngredient1 && item.strMeasure1">
-    {{ item.strIngredient1 }} :
+    <app-ingredient [ingredient]="item.strIngredient1"></app-ingredient> :
     {{ item.strMeasure1 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient2 && item.strMeasure2">
-    {{ item.strIngredient2 }} :
+    <app-ingredient [ingredient]="item.strIngredient2"></app-ingredient> :
     {{ item.strMeasure2 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient3 && item.strMeasure3">
-    {{ item.strIngredient3 }} :
+    <app-ingredient [ingredient]="item.strIngredient3"></app-ingredient> :
     {{ item.strMeasure3 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient4 && item.strMeasure4">
-    {{ item.strIngredient4 }} :
+    <app-ingredient [ingredient]="item.strIngredient4"></app-ingredient> :
     {{ item.strMeasure4 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient5 && item.strMeasure5">
-    {{ item.strIngredient5 }} :
+    <app-ingredient [ingredient]="item.strIngredient5"></app-ingredient> :
     {{ item.strMeasure5 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient6 && item.strMeasure6">
-    {{ item.strIngredient6 }} :
+    <app-ingredient [ingredient]="item.strIngredient6"></app-ingredient> :
     {{ item.strMeasure6 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient7 && item.strMeasure7">
-    {{ item.strIngredient7 }} : {{ item.strMeasure7 }}
+    <app-ingredient [ingredient]="item.strIngredient7"></app-ingredient> :
+    {{ item.strMeasure7 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient8 && item.strMeasure8">
-    {{ item.strIngredient8 }} :
+    <app-ingredient [ingredient]="item.strIngredient8"></app-ingredient> :
     {{ item.strMeasure8 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient9 && item.strMeasure9">
-    {{ item.strIngredient9 }} :
+    <app-ingredient [ingredient]="item.strIngredient9"></app-ingredient> :
     {{ item.strMeasure9 }}
   </div>
   <div class="ingredient" *ngIf="item.strIngredient10 && item.strMeasure10">
-    {{ item.strIngredient10 }} :
+    <app-ingredient [ingredient]="item.strIngredient10"></app-ingredient> :
     {{ item.strMeasure10 }}
   </div>
 </fieldset>
-
-
