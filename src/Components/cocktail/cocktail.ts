@@ -123,3 +123,7 @@ export class Ingredient implements IIngredient {
   strAlcohol!: string;
   strABV!: string;
 }
+
+export class HelperIngredient {
+  ingredient!: Ingredient[];
+}

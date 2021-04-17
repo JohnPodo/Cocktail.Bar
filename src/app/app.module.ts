@@ -8,7 +8,7 @@ import { CocktailComponent } from '../Components/cocktail/cocktail.component';
 import { FormsModule } from '@angular/forms';
 import { CocktailViewComponent } from '../SharedComponents/cocktail-view/cocktail-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IngredientComponent } from '../SharedComponents/ingredient/ingredient.component';
+import { IngredientComponent,DialogElementsExampleDialog } from '../SharedComponents/ingredient/ingredient.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     CocktailComponent,
     CocktailViewComponent,
     IngredientComponent,
+    DialogElementsExampleDialog
   ],
   imports: [
     BrowserModule,

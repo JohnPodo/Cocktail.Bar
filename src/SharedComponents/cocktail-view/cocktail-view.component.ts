@@ -10,7 +10,6 @@ export class CocktailViewComponent implements OnInit {
   constructor() {}
 
   ngOnChanges(): void {
-    console.log('Cocktail');
   }
 
   @Input() item!: Cocktail;

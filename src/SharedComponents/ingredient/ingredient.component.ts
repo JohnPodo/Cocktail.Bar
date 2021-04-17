@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input, Inject,OnChanges } from '@angular/core';
 import {
   MatDialog,
   MAT_DIALOG_DATA,
@@ -6,7 +6,10 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { CockTailService } from '../../Components/cocktail/cocktailService';
-import { Ingredient } from '../../Components/cocktail/cocktail';
+import {
+  Ingredient,
+  HelperIngredient,
+} from '../../Components/cocktail/cocktail';
 
 @Component({
   selector: 'app-ingredient',
@@ -37,7 +40,9 @@ export class IngredientComponent implements OnInit {
 export class DialogElementsExampleDialog {
   ingredientName!: string;
 
-  ingredientObject!: Ingredient;
+  ingredientObject: HelperIngredient = {
+    ingredient: [],
+  };
 
   constructor(
     private service: CockTailService,
@@ -46,13 +51,15 @@ export class DialogElementsExampleDialog {
   ) {
     this.ingredientName = data.ingredientName;
   }
-
   ngOnInit(): void {
     this.GetIngredient(this.ingredientName);
   }
   GetIngredient(ingredient: string) {
+    console.log(this.ingredientObject);
     this.service.GetIngredients(ingredient).subscribe((data) => {
+      console.log(data);
       this.ingredientObject = data;
+      console.log(this.ingredientObject);
     });
   }
 }

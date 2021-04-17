@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Cocktail, Bar, Ingredient } from './cocktail';
+import { Cocktail, Bar, Ingredient, HelperIngredient } from './cocktail';
 
 @Injectable({
   providedIn: 'root',
@@ -60,7 +60,7 @@ export class CockTailService {
     var str = ingredient.toLowerCase();
     str = str.split(' ').join('_');
     var url = this.searchIngredient + str;
-    return this.http.get<Ingredient>(url);
+    return this.http.get<HelperIngredient>(url);
   }
   constructor(private http: HttpClient) {}
 }
