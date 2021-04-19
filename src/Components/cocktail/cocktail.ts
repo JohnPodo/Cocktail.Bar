@@ -125,5 +125,5 @@ export class Ingredient implements IIngredient {
 }
 
 export class HelperIngredient {
-  ingredient!: Ingredient[];
+  ingredients!: Ingredient[];
 }

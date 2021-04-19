@@ -21,7 +21,7 @@ export class CockTailService {
     return this.http.get<Bar>(randomCockTail);
   }
 
-  GetCocktailsByName(searchString: string) {
+  GetCocktailsByName(searchString: string): Observable<Bar> {
     var str = searchString.toLowerCase();
     str = str.split(' ').join('_');
     var url = this.searchString + str;
@@ -56,7 +56,7 @@ export class CockTailService {
     return list;
   }
 
-  GetIngredients(ingredient: string) {
+  GetIngredients(ingredient: string): Observable<HelperIngredient> {
     var str = ingredient.toLowerCase();
     str = str.split(' ').join('_');
     var url = this.searchIngredient + str;

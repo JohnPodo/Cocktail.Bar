@@ -1,6 +1,16 @@
-
-  <h1 mat-dialog-title>Ti fasi</h1>
-  <div mat-dialog-content>
-    This dialog showcases the title, close, content and actions elements.
-    {{ingredientName}}
+<div *ngIf="ingredientObject.ingredients&&ingredientObject.ingredients.length">
+  <div mat-dialog-title class="dialog-title">
+    <div class="ingredient-name">
+      {{ingredientObject.ingredients[0].strIngredient}}
+    </div>
+    <div
+      class="alchohol-percentage"
+      *ngIf="ingredientObject.ingredients[0].strAlcohol&&ingredientObject.ingredients[0].strABV"
+    >
+      Percentage of Alchohol: {{ingredientObject.ingredients[0].strABV}}%
+    </div>
   </div>
+  <div mat-dialog-content>
+    {{ingredientObject.ingredients[0].strDescription}}
+  </div>
+</div>
