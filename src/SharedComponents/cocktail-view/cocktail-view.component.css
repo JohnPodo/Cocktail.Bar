@@ -5,6 +5,7 @@
   height: 5%;
   color: #819a8c;
   font-style: italic;
+  max-height: 5%;
 }
 
 img {
@@ -75,4 +76,3 @@ img {
   color: #fff;
   margin: 5px;
 }
-
